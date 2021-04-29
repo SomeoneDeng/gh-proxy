@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="./gpx/static/jquery-3.6.0.min.js"></script>
+    <title>Proxy</title>
+</head>
+
+<body>
+    <h1>GitHub文件下载代理</h1>
+    <form action="#" method="GET">
+        <input type="text" name="url" placeholder="github url">
+    </form>
+    <button id="download">download</button>
+    <script>
+        $('#download').on("click", function () {
+            var url = $('input[name="url"]').val()
+            var a = document.createElement("a");    
+            a.href = 'gpx/api/download?url=' + btoa(encodeURIComponent(url))
+            a.click();
+        })
+    </script>
+</body>
+
+</html>
